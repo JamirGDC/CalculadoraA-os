@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inputs">
+            <div class="input-container">
+                <p>DAY</p>
+                <input type="text" id="day" placeholder="DD">
+            </div>
+            <div class="input-container">
+                <p>MONTH</p>
+                <input type="text" id="month" placeholder="MM">
+            </div>
+            <div class="input-container">
+                <p>YEAR</p>
+                <input type="text" id="year" placeholder="YYYY">
+            </div>
+        </div>
+
+        <div class="button">
+            <div class="button-left">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="button-right">
+                <div class="button-calculate" >
+                    <i class="fa-solid fa-circle-arrow-down btn-calculate" style="color: #9929bd;" onclick="calculateDate()" ></i>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <div class="answer">
+
+            <p><span class="outYear">-- </span>years</p>
+            <p><span class="outMonth">-- </span>months</p>
+            <p><span class="outDay">-- </span>days</p>
+
+        </div>
+
+    </div>
+    <script src="app.js"></script>   
+    <script src="https://kit.fontawesome.com/19c8616de2.js" crossorigin="anonymous"></script> 
+</body>
+</html>
