@@ -22,10 +22,11 @@ function calculateDate() {
 
     const timeDiff = actualDate - userDate;
 
-    
-    const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
-    const months = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
-    const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30.44) / (1000 * 60 * 60 * 24)));
+
+    const years = actualDate.getFullYear() - userDate.getFullYear();
+    const actualMonth = actualDate.getMonth();
+    const userMonth = userDate.getMonth();
+
 
     answerContainer.innerHTML = `<p><span class="outYear"> ${years} </span>years</p> <p><span class="outMonth">${months} </span>months</p> <p><span class="outDay">${days} </span>days</p>`;
 
