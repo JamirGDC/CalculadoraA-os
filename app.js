@@ -1,6 +1,6 @@
-const dayInput = document.querySelector("#day");
-const monthInput = document.querySelector("#month");
-const yearInput = document.querySelector("#year");
+const dayInputByUser = document.querySelector("#day");
+const monthInputByUser = document.querySelector("#month");
+const yearInputByUser = document.querySelector("#year");
 
 const calculateButton = document.querySelector(".btn-calculate");
 const answerContainer = document.querySelector(".answer");
@@ -12,22 +12,21 @@ const outDay = document.querySelector(".outDay");
 
 function calculateDate() {
 
-    const day = parseInt(dayInput.value);
-    const month = parseInt(monthInput.value);
-    const year = parseInt(yearInput.value);
+    const dayParsed = parseInt(dayInputByUser.value);
+    const monthParsed = parseInt(monthInputByUser.value);
+    const yearParsed = parseInt(yearInputByUser.value);
 
-    if (day <= 0 || month <= 0 || year < 0) {
+    if (dayParsed <= 0 || monthParsed <= 0 || yearParsed < 0) {
         answerContainer.innerHTML = "Please verify the values entered";
         return;
     }
 
     const actualDate = new Date();
 
-    const userDate = new Date(year, month - 1, day);
+    const userDate = new Date(yearParsed, monthParsed - 1, dayParsed);
 
     const timeDiff = actualDate - userDate;
 
-    
     const years = Math.abs(actualDate.getFullYear() - userDate.getFullYear());
     const actualMonth = actualDate.getMonth();
     const userMonth = userDate.getMonth();
