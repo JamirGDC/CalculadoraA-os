@@ -28,11 +28,11 @@ function calculateDate() {
     const timeDiff = actualDate - userDate;
 
     
-    const years = actualDate.getFullYear() - userDate.getFullYear();
+    const years = Math.abs(actualDate.getFullYear() - userDate.getFullYear());
     const actualMonth = actualDate.getMonth();
     const userMonth = userDate.getMonth();
-    const months = actualMonth - userMonth + (actualDate.getDate() < userDate.getDate() ? -1 : 0);
-    const days = actualDate.getDate() - userDate.getDate();
+    const months = Math.abs(actualMonth - userMonth + (actualDate.getDate() < userDate.getDate() ? -1 : 0));
+    const days = Math.abs(actualDate.getDate() - userDate.getDate());
 
     answerContainer.innerHTML = `<p><span class="outYear"> ${years} </span>years</p> <p><span class="outMonth">${months} </span>months</p> <p><span class="outDay">${days} </span>days</p>`;
     
