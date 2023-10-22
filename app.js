@@ -16,23 +16,24 @@ function calculateDate() {
     const month = parseInt(monthInput.value);
     const year = parseInt(yearInput.value);
 
+    if (day <= 0 || month <= 0 || year < 0) {
+        answerContainer.innerHTML = "Please verify the values entered";
+        return;
+    }
+
     const actualDate = new Date();
 
     const userDate = new Date(year, month - 1, day);
 
     const timeDiff = actualDate - userDate;
 
-
+    
     const years = actualDate.getFullYear() - userDate.getFullYear();
     const actualMonth = actualDate.getMonth();
     const userMonth = userDate.getMonth();
-
+    const months = actualMonth - userMonth + (actualDate.getDate() < userDate.getDate() ? -1 : 0);
+    const days = actualDate.getDate() - userDate.getDate();
 
     answerContainer.innerHTML = `<p><span class="outYear"> ${years} </span>years</p> <p><span class="outMonth">${months} </span>months</p> <p><span class="outDay">${days} </span>days</p>`;
-
-    
-    
-    // `<br>${years} years<br>${months} months<br>${days} days`;
-
     
 }
